@@ -14,10 +14,12 @@ AMR_MSGTYPE="$(jq --raw-output '.msgType' $CONFIG_PATH)"
 AMR_IDS="$(jq --raw-output '.ids' $CONFIG_PATH)"
 DURATION="$(jq --raw-output '.duration' $CONFIG_PATH)"
 PT="$(jq --raw-output '.pause_time' $CONFIG_PATH)"
+
+# Units of measurement
 GUOM="$(jq --raw-output '.gas_unit_of_measurement' $CONFIG_PATH)"
 EUOM="$(jq --raw-output '.electric_unit_of_measurement' $CONFIG_PATH)"
 WUOM="$(jq --raw-output '.water_unit_of_measurement' $CONFIG_PATH)"
-
+# Scaling values for metered data
 GMP="$(jq --raw-output '.gas_multiplier' $CONFIG_PATH)"
 EMP="$(jq --raw-output '.electric_multiplier' $CONFIG_PATH)"
 WMP="$(jq --raw-output '.water_multiplier' $CONFIG_PATH)"
@@ -26,8 +28,8 @@ WMP="$(jq --raw-output '.water_multiplier' $CONFIG_PATH)"
 echo "Starting RTLAMR with parameters:"
 echo "AMR Message Type =" $AMR_MSGTYPE
 echo "AMR Device IDs =" $AMR_IDS
-echo "Time Between Readings =" $PT
-echo "Time to Listen for Readings = " $DURATION
+echo "Time to Wait Between Readings =" $PT
+echo "Duration to Listen for Readings = " $DURATION
 echo "Electric Unit of measurement = " $EUOM
 echo "Gas Unit of measurement = " $GUOM
 echo "Water Unit of measurement = " $WUOM
