@@ -21,7 +21,7 @@ RF events on 912Mhz and send the data to The Home Assistant REST API"
 RUN apk add --no-cache --virtual build-deps alpine-sdk cmake git libusb-dev && \
     mkdir /tmp/src && \
     cd /tmp/src && \
-    git clone https://github.com/blinick/rtl-sdr.git && \
+    git clone https://github.com/rtlsdrblog/rtl-sdr-blog.git && \
     cd /tmp/src/rtl-sdr/ && \
     git checkout remotes/origin/wip_rtltcp_ringbuf && \
     mkdir /tmp/src/rtl-sdr/build && \
